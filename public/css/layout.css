@@ -1,0 +1,556 @@
+/* =============================================================
+   Palette & Design Tokens (CSS Custom Properties)
+   Centralise les couleurs et styles réutilisables de l'UI.
+   Modifier ici impacte toute l'application.
+   ============================================================= */
+:root {
+    --bg: #f6f8fa;
+    /* Fond global de la page */
+    --card: #ffffff;
+    /* Fond des cartes/panneaux */
+    --text: #1f2937;
+    /* Couleur principale du texte */
+    --muted: #6b7280;
+    /* Texte secondaire */
+    --primary: #6366f1;
+    /* Couleur d'accent (non utilisée directement dans les btn actuels) */
+    --border: #e5e7eb;
+    /* Bordures neutres */
+    --success: #10b981;
+    /* Accent succès */
+    --warning: #f59e0b;
+    /* Accent avertissement */
+    --neutral: #9ca3af;
+    /* Gris utilitaire */
+    --error: #ef4444;
+    /* Rouge erreur / danger */
+}
+
+/* Reset basé sur box-sizing pour des calculs fiables */
+* {
+    box-sizing: border-box;
+}
+
+/* Structure principale de la page */
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+    color: var(--text);
+    background: var(--bg);
+    min-height: 100vh;
+    /* Assure un fond étendu */
+    padding: 32px;
+    /* Espacement périphérique global */
+}
+
+/* Titres génériques (ajusté sobre) */
+h1 {
+    font-size: 20px;
+    margin: 0;
+}
+
+/* Texte secondaire / descriptif */
+.muted {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* Tables génériques (utilisées avec CI Table) */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead th {
+    text-align: left;
+    padding: 14px 16px;
+    background: #fafafa;
+    /* Légère différenciation de l'en-tête */
+    font-size: 13px;
+    color: var(--muted);
+    border-bottom: 1px solid var(--border);
+}
+
+tbody td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+}
+
+/* Empêche les retours à la ligne pour le tableau des contacts (spécifique) */
+#contactsTable th,
+#contactsTable td {
+    white-space: nowrap;
+}
+
+/* Survol d'une ligne de tableau */
+tbody tr:hover {
+    background: #fcfcff;
+}
+
+/* Conteneur scroll horizontal pour grandes tables */
+.table-wrap {
+    overflow-x: auto;
+}
+
+/* Contrainte de largeur centrale des vues */
+.container {
+    min-width: 1300px;
+    max-width: max-content;
+    margin: 0 auto;
+}
+
+.login {
+    max-width: max-content;
+    margin: 0 auto;
+}
+
+/* Composant carte générique (listes, panels) */
+.card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(17, 24, 39, 0.05);
+    overflow: hidden;
+}
+
+/* Petite étiquette arrondie */
+.badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+/* Style condensé pour badge warning (distinct des messages .warning) */
+.warning {
+    background: #fff7ed;
+    color: #b40909;
+    border: 1px solid #fd8a8a;
+}
+
+/* Style condensé pour badge success (distinct des messages .success) */
+.success {
+    background: #ecfdf5;
+    color: #047857;
+    border: 1px solid #a7f3d0;
+}
+
+/* Bouton principal (action primaire) */
+.btn-primary {
+    font: inherit;
+    font-size: .9rem;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    line-height: 1.1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .4rem;
+    border: none;
+    transition: background .2s, box-shadow .2s, transform .15s;
+    letter-spacing: .3px;
+    text-decoration: none;
+    background: #2563eb;
+    color: #fff;
+    padding: .65rem 1rem;
+    min-height: 40px;
+    box-shadow: 0 2px 4px -1px rgba(37, 99, 235, .6), 0 1px 2px rgba(0, 0, 0, .08);
+}
+
+.btn-primary:hover {
+    background: #1d4ed8;
+}
+
+.btn-primary:active {
+    transform: translateY(1px);
+}
+
+/* Variantes secondaires héritées (compatibilité avec ancien markup) */
+.btn-edit,
+.btn-danger,
+.btn-secondary,
+.btn-success,
+.btn-warning {
+    appearance: none;
+    border: 1px solid var(--border);
+    background: #fff;
+    color: var(--text);
+    padding: .65rem 1rem;
+    border-radius: 10px;
+    font-size: .9rem;
+    min-height: 40px;
+    cursor: pointer;
+    transition: transform 0.05s ease, background 0.2s ease, border-color 0.2s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .4rem;
+}
+
+/* Couleurs dédiées pour chaque variante secondaire */
+.btn-secondary {
+    background: #e9ebee;
+    color: #1e293b;
+    border: none;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .08);
+}
+
+.btn-edit {
+    background: #f59e0b;
+    color: #fff;
+    border: none;
+    box-shadow: 0 2px 4px -1px rgba(245, 158, 11, .4), 0 1px 2px rgba(0, 0, 0, .08);
+}
+
+.btn-danger {
+    background: #ef4444;
+    color: #fff;
+    border: none;
+    box-shadow: 0 2px 4px -1px rgba(239, 68, 68, .35), 0 1px 2px rgba(0, 0, 0, .08);
+}
+
+.btn-danger:hover {
+    background: #dc2626;
+}
+
+.btn-secondary:hover {
+    background: #d8dce0;
+}
+
+.btn-secondary:active {
+    transform: translateY(1px);
+}
+
+.btn-edit:hover {
+    background: #d97706;
+}
+
+.btn-success {
+    background: #10b981;
+    color: #fff;
+    border: none;
+    box-shadow: 0 2px 4px -1px rgba(16, 185, 129, .4), 0 1px 2px rgba(0, 0, 0, .08);
+}
+
+.btn-success:hover {
+    background: #059669;
+}
+
+.btn-success:active {
+    transform: translateY(1px);
+}
+
+.btn-warning {
+    background: #f59e0b;
+    color: #fff;
+    border: none;
+    box-shadow: 0 2px 4px -1px rgba(245, 158, 11, .4), 0 1px 2px rgba(0, 0, 0, .08);
+}
+
+.btn-warning:hover {
+    background: #d97706;
+}
+
+.btn-warning:active {
+    transform: translateY(1px);
+}
+
+/* Bouton neutre générique (utilisé pour la navigation inactive) */
+.btn, a {
+    appearance: none;
+    border: 1px solid var(--border);
+    background: #fff;
+    color: var(--text);
+    padding: .65rem 1rem;
+    border-radius: 10px;
+    font-size: .9rem;
+    min-height: 40px;
+    cursor: pointer;
+    transition: transform 0.05s ease, background 0.2s ease, border-color 0.2s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .4rem;
+    box-shadow: 0 1px 2px rgba(17, 24, 39, .06);
+}
+
+.btn:hover, a:hover {
+    background: #fafafa;
+}
+
+.btn:active, a:active {
+    transform: translateY(1px);
+}
+
+/* (Déprécié) success/warning héritent du style générique désormais */
+
+/* Bouton de déconnexion / danger (accent rouge clair) */
+.disconnect {
+    border-color: #fecaca;
+    background: #fee2e2;
+    color: #991b1b;
+    border: none;
+    padding: .65rem 1rem;
+    border-radius: 10px;
+    font-size: .9rem;
+    min-height: 40px;
+    min-width: 120px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .4rem;
+    text-decoration: none;
+    transition: transform 0.05s ease, background 0.2s ease;
+    box-shadow: 0 2px 4px -1px rgba(239, 68, 68, .35), 0 1px 2px rgba(0, 0, 0, .08);
+}
+
+.disconnect:hover {
+    background: #fecaca;
+}
+
+/* Message de succès (bloc informatif, à ne pas confondre avec badge .success) */
+.success {
+    display: flex;
+    align-items: flex-start;
+    gap: .5rem;
+    padding: .75rem .9rem;
+    border: 1px solid #a7f3d0;
+    background: #ecfdf5;
+    color: #065f46;
+    border-radius: 10px;
+    font-size: .9rem;
+}
+
+.success::before {
+    content: "✓";
+    font-weight: 700;
+    color: #059669;
+    line-height: 1;
+}
+
+/* Message d'avertissement (bloc informatif) */
+.warning {
+    display: flex;
+    align-items: flex-start;
+    gap: .5rem;
+    padding: .75rem .9rem;
+    border: 1px solid #fde68a;
+    background: #fffbeb;
+    color: #92400e;
+    border-radius: 10px;
+    font-size: .9rem;
+}
+
+.warning::before {
+    content: "!";
+    font-weight: 800;
+    color: #b45309;
+    line-height: 1;
+}
+
+.disconnect:hover {
+    background: #fda5a5;
+}
+
+/* Ombres colorées pour cohérence visuelle par variante */
+.btn.btn-secondary {
+    box-shadow: 0 2px 4px -1px rgba(148, 163, 184, .35), 0 1px 2px rgba(0, 0, 0, .08);
+}
+
+.btn.btn-success {
+    box-shadow: 0 2px 4px -1px rgba(16, 185, 129, .4), 0 1px 2px rgba(0, 0, 0, .08);
+}
+
+.btn.btn-warning {
+    box-shadow: 0 2px 4px -1px rgba(245, 158, 11, .4), 0 1px 2px rgba(0, 0, 0, .08);
+}
+
+/* Styles de base des labels (accessibilité + lisibilité) */
+label {
+    font-size: .75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    color: #334155;
+    display: flex;
+    gap: .35rem;
+}
+
+/* Champs de formulaire standard */
+input[type=text],
+input[type=email],
+input[type=tel],
+input[type=time],
+input[type=password],
+select {
+    border: 1px solid #cbd5e1;
+    background: #fff;
+    border-radius: 6px;
+    padding: .6rem .7rem;
+    font: inherit;
+    font-size: .9rem;
+    line-height: 1.2;
+    transition: border-color .2s, box-shadow .2s, background .2s;
+}
+
+/* Focus visible amélioré pour accessibilité */
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=tel]:focus,
+input[type=time]:focus,
+input[type=password]:focus,
+select:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, .25);
+    background: #fff;
+}
+
+/* === Composants formulaires réutilisables ==================== */
+/* Panneau contenant un formulaire */
+.form-panel {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.1rem 1.25rem 1.25rem;
+}
+
+/* Footer de formulaire (zone des actions) */
+.form-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: .6rem;
+    padding-top: .75rem;
+    margin-top: .5rem;
+    border-top: 1px solid var(--border);
+}
+
+/* Ligne regroupant des champs; wrap autorisé pour responsive */
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+/* .form-col : conteneur sémantique (style volontairement vide) */
+
+/* Espacement vertical label/champ dans une colonne */
+.form-col>label {
+    margin-bottom: .35rem;
+}
+
+/* Compatibilité: anciennes classes grid rétrogradées en blocs simples */
+.form-grid-2,
+.form-grid-3 {
+    display: block;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 640px) {
+    .form-panel {
+        padding: .9rem 1rem 1.1rem;
+        border-radius: 10px;
+    }
+
+    /* Les lignes se réorganisent déjà via flex-wrap */
+    .btn-primary,
+    .btn-secondary {
+        padding: .55rem .85rem;
+    }
+}
+
+/* ===== Barre de navigation globale (sticky + ombre) ===== */
+.top-nav {
+    position: sticky;
+    top: 0;
+    z-index: 500;
+    margin-bottom: 16px;
+    display: block;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(17, 24, 39, 0.05);
+    padding: 8px 10px;
+}
+
+/* Barre interne : centre la marque et pousse le toggle à droite */
+.top-nav__bar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    /* le bouton menu reste à droite */
+    gap: 8px;
+    max-width: 1300px;
+    margin: 0 auto;
+    position: relative;
+    /* permet de centrer la marque en absolu */
+    min-height: 48px;
+    /* assure un alignement vertical confortable */
+}
+
+/* Bloc marque : centré au milieu de la barre */
+.top-nav__brand {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Lien marque (logo + nom) */
+.top-nav__brand a {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    font-weight: 700;
+    color: #111827;
+    text-decoration: none;
+}
+
+/* Bouton de toggle caché sur desktop */
+.top-nav__toggle {
+    display: none;
+}
+
+/* Conteneur des liens de navigation */
+.top-nav__inner {
+    max-width: 1300px;
+    margin: 6px auto 0;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Utilitaire historique : positionnement fixe haut-gauche */
+.top-left-fixed {
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    z-index: 1000;
+}
+
+/* Responsive: repli de la navigation sur petits écrans */
+@media (max-width: 800px) {
+    .top-nav__toggle {
+        display: inline-flex;
+    }
+
+    .top-nav__inner {
+        display: none;
+    }
+
+    .top-nav.is-open .top-nav__inner {
+        display: flex;
+    }
+}
