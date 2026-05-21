@@ -1,0 +1,892 @@
+DEBUG - 2026-04-17 06:44:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-04-17 06:44:10 --> mysqli_sql_exception: Table 'dmsDB.settings' doesn't exist in /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(327): mysqli->query()
+#1 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Database/BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Database/BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/dmsnougaro/vendor/codeigniter4/settings/src/Handlers/DatabaseHandler.php(186): CodeIgniter\Database\BaseBuilder->get()
+#5 /var/www/dmsnougaro/vendor/codeigniter4/settings/src/Handlers/DatabaseHandler.php(51): CodeIgniter\Settings\Handlers\DatabaseHandler->hydrate()
+#6 /var/www/dmsnougaro/vendor/codeigniter4/settings/src/Settings.php(59): CodeIgniter\Settings\Handlers\DatabaseHandler->has()
+#7 /var/www/dmsnougaro/vendor/codeigniter4/settings/src/Helpers/setting_helper.php(25): CodeIgniter\Settings\Settings->get()
+#8 /var/www/dmsnougaro/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(682): setting()
+#9 /var/www/dmsnougaro/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(700): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserInfo()
+#10 /var/www/dmsnougaro/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(387): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserKey()
+#11 /var/www/dmsnougaro/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(371): CodeIgniter\Shield\Authentication\Authenticators\Session->checkUserState()
+#12 /var/www/dmsnougaro/vendor/codeigniter4/shield/src/Auth.php(189): CodeIgniter\Shield\Authentication\Authenticators\Session->loggedIn()
+#13 /var/www/dmsnougaro/vendor/codeigniter4/shield/src/Collectors/Auth.php(76): CodeIgniter\Shield\Auth->__call()
+#14 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/BaseCollector.php(228): CodeIgniter\Shield\Collectors\Auth->display()
+#15 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Debug/Toolbar.php(95): CodeIgniter\Debug\Toolbar\Collectors\BaseCollector->getAsArray()
+#16 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Debug/Toolbar.php(391): CodeIgniter\Debug\Toolbar->run()
+#17 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Filters/DebugToolbar.php(44): CodeIgniter\Debug\Toolbar->prepare()
+#18 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Filters/Filters.php(278): CodeIgniter\Filters\DebugToolbar->after()
+#19 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Filters/Filters.php(364): CodeIgniter\Filters\Filters->runAfter()
+#20 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/CodeIgniter.php(407): CodeIgniter\Filters\Filters->runRequired()
+#21 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->runRequiredAfterFilters()
+#22 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Boot.php(363): CodeIgniter\CodeIgniter->run()
+#23 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#24 /var/www/dmsnougaro/public/index.php(59): CodeIgniter\Boot::bootWeb()
+#25 {main}
+CRITICAL - 2026-04-17 06:44:10 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'dmsDB.settings' doesn't exist
+[Method: GET, Route: /]
+in SYSTEMPATH/Database/BaseConnection.php on line 684.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 2 VENDORPATH/codeigniter4/settings/src/Handlers/DatabaseHandler.php(186): CodeIgniter\Database\BaseBuilder->get()
+ 3 VENDORPATH/codeigniter4/settings/src/Handlers/DatabaseHandler.php(51): CodeIgniter\Settings\Handlers\DatabaseHandler->hydrate()
+ 4 VENDORPATH/codeigniter4/settings/src/Settings.php(59): CodeIgniter\Settings\Handlers\DatabaseHandler->has()
+ 5 VENDORPATH/codeigniter4/settings/src/Helpers/setting_helper.php(25): CodeIgniter\Settings\Settings->get()
+ 6 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(682): setting()
+ 7 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(700): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserInfo()
+ 8 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(387): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserKey()
+ 9 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(371): CodeIgniter\Shield\Authentication\Authenticators\Session->checkUserState()
+10 VENDORPATH/codeigniter4/shield/src/Auth.php(189): CodeIgniter\Shield\Authentication\Authenticators\Session->loggedIn()
+11 VENDORPATH/codeigniter4/shield/src/Collectors/Auth.php(76): CodeIgniter\Shield\Auth->__call()
+12 SYSTEMPATH/Debug/Toolbar/Collectors/BaseCollector.php(228): CodeIgniter\Shield\Collectors\Auth->display()
+13 SYSTEMPATH/Debug/Toolbar.php(95): CodeIgniter\Debug\Toolbar\Collectors\BaseCollector->getAsArray()
+14 SYSTEMPATH/Debug/Toolbar.php(391): CodeIgniter\Debug\Toolbar->run()
+15 SYSTEMPATH/Filters/DebugToolbar.php(44): CodeIgniter\Debug\Toolbar->prepare()
+16 SYSTEMPATH/Filters/Filters.php(278): CodeIgniter\Filters\DebugToolbar->after()
+17 SYSTEMPATH/Filters/Filters.php(364): CodeIgniter\Filters\Filters->runAfter()
+18 SYSTEMPATH/CodeIgniter.php(407): CodeIgniter\Filters\Filters->runRequired()
+19 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->runRequiredAfterFilters()
+20 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+21 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+22 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2026-04-17 06:44:10 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'dmsDB.settings' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 4 VENDORPATH/codeigniter4/settings/src/Handlers/DatabaseHandler.php(186): CodeIgniter\Database\BaseBuilder->get()
+ 5 VENDORPATH/codeigniter4/settings/src/Handlers/DatabaseHandler.php(51): CodeIgniter\Settings\Handlers\DatabaseHandler->hydrate()
+ 6 VENDORPATH/codeigniter4/settings/src/Settings.php(59): CodeIgniter\Settings\Handlers\DatabaseHandler->has()
+ 7 VENDORPATH/codeigniter4/settings/src/Helpers/setting_helper.php(25): CodeIgniter\Settings\Settings->get()
+ 8 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(682): setting()
+ 9 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(700): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserInfo()
+10 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(387): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserKey()
+11 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(371): CodeIgniter\Shield\Authentication\Authenticators\Session->checkUserState()
+12 VENDORPATH/codeigniter4/shield/src/Auth.php(189): CodeIgniter\Shield\Authentication\Authenticators\Session->loggedIn()
+13 VENDORPATH/codeigniter4/shield/src/Collectors/Auth.php(76): CodeIgniter\Shield\Auth->__call()
+14 SYSTEMPATH/Debug/Toolbar/Collectors/BaseCollector.php(228): CodeIgniter\Shield\Collectors\Auth->display()
+15 SYSTEMPATH/Debug/Toolbar.php(95): CodeIgniter\Debug\Toolbar\Collectors\BaseCollector->getAsArray()
+16 SYSTEMPATH/Debug/Toolbar.php(391): CodeIgniter\Debug\Toolbar->run()
+17 SYSTEMPATH/Filters/DebugToolbar.php(44): CodeIgniter\Debug\Toolbar->prepare()
+18 SYSTEMPATH/Filters/Filters.php(278): CodeIgniter\Filters\DebugToolbar->after()
+19 SYSTEMPATH/Filters/Filters.php(364): CodeIgniter\Filters\Filters->runAfter()
+20 SYSTEMPATH/CodeIgniter.php(407): CodeIgniter\Filters\Filters->runRequired()
+21 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->runRequiredAfterFilters()
+22 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+23 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+24 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2026-04-17 06:44:10 --> [Caused by] mysqli_sql_exception: Table 'dmsDB.settings' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 5 VENDORPATH/codeigniter4/settings/src/Handlers/DatabaseHandler.php(186): CodeIgniter\Database\BaseBuilder->get()
+ 6 VENDORPATH/codeigniter4/settings/src/Handlers/DatabaseHandler.php(51): CodeIgniter\Settings\Handlers\DatabaseHandler->hydrate()
+ 7 VENDORPATH/codeigniter4/settings/src/Settings.php(59): CodeIgniter\Settings\Handlers\DatabaseHandler->has()
+ 8 VENDORPATH/codeigniter4/settings/src/Helpers/setting_helper.php(25): CodeIgniter\Settings\Settings->get()
+ 9 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(682): setting()
+10 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(700): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserInfo()
+11 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(387): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserKey()
+12 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(371): CodeIgniter\Shield\Authentication\Authenticators\Session->checkUserState()
+13 VENDORPATH/codeigniter4/shield/src/Auth.php(189): CodeIgniter\Shield\Authentication\Authenticators\Session->loggedIn()
+14 VENDORPATH/codeigniter4/shield/src/Collectors/Auth.php(76): CodeIgniter\Shield\Auth->__call()
+15 SYSTEMPATH/Debug/Toolbar/Collectors/BaseCollector.php(228): CodeIgniter\Shield\Collectors\Auth->display()
+16 SYSTEMPATH/Debug/Toolbar.php(95): CodeIgniter\Debug\Toolbar\Collectors\BaseCollector->getAsArray()
+17 SYSTEMPATH/Debug/Toolbar.php(391): CodeIgniter\Debug\Toolbar->run()
+18 SYSTEMPATH/Filters/DebugToolbar.php(44): CodeIgniter\Debug\Toolbar->prepare()
+19 SYSTEMPATH/Filters/Filters.php(278): CodeIgniter\Filters\DebugToolbar->after()
+20 SYSTEMPATH/Filters/Filters.php(364): CodeIgniter\Filters\Filters->runAfter()
+21 SYSTEMPATH/CodeIgniter.php(407): CodeIgniter\Filters\Filters->runRequired()
+22 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->runRequiredAfterFilters()
+23 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+24 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+25 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+DEBUG - 2026-04-17 06:44:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-04-17 06:44:43 --> mysqli_sql_exception: Table 'dmsDB.settings' doesn't exist in /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(327): mysqli->query()
+#1 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Database/BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Database/BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/dmsnougaro/vendor/codeigniter4/settings/src/Handlers/DatabaseHandler.php(186): CodeIgniter\Database\BaseBuilder->get()
+#5 /var/www/dmsnougaro/vendor/codeigniter4/settings/src/Handlers/DatabaseHandler.php(51): CodeIgniter\Settings\Handlers\DatabaseHandler->hydrate()
+#6 /var/www/dmsnougaro/vendor/codeigniter4/settings/src/Settings.php(59): CodeIgniter\Settings\Handlers\DatabaseHandler->has()
+#7 /var/www/dmsnougaro/vendor/codeigniter4/settings/src/Helpers/setting_helper.php(25): CodeIgniter\Settings\Settings->get()
+#8 /var/www/dmsnougaro/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(682): setting()
+#9 /var/www/dmsnougaro/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(700): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserInfo()
+#10 /var/www/dmsnougaro/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(387): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserKey()
+#11 /var/www/dmsnougaro/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(371): CodeIgniter\Shield\Authentication\Authenticators\Session->checkUserState()
+#12 /var/www/dmsnougaro/vendor/codeigniter4/shield/src/Auth.php(189): CodeIgniter\Shield\Authentication\Authenticators\Session->loggedIn()
+#13 /var/www/dmsnougaro/vendor/codeigniter4/shield/src/Collectors/Auth.php(76): CodeIgniter\Shield\Auth->__call()
+#14 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/BaseCollector.php(228): CodeIgniter\Shield\Collectors\Auth->display()
+#15 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Debug/Toolbar.php(95): CodeIgniter\Debug\Toolbar\Collectors\BaseCollector->getAsArray()
+#16 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Debug/Toolbar.php(391): CodeIgniter\Debug\Toolbar->run()
+#17 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Filters/DebugToolbar.php(44): CodeIgniter\Debug\Toolbar->prepare()
+#18 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Filters/Filters.php(278): CodeIgniter\Filters\DebugToolbar->after()
+#19 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Filters/Filters.php(364): CodeIgniter\Filters\Filters->runAfter()
+#20 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/CodeIgniter.php(407): CodeIgniter\Filters\Filters->runRequired()
+#21 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->runRequiredAfterFilters()
+#22 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Boot.php(363): CodeIgniter\CodeIgniter->run()
+#23 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#24 /var/www/dmsnougaro/public/index.php(59): CodeIgniter\Boot::bootWeb()
+#25 {main}
+CRITICAL - 2026-04-17 06:44:43 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'dmsDB.settings' doesn't exist
+[Method: GET, Route: /]
+in SYSTEMPATH/Database/BaseConnection.php on line 684.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 2 VENDORPATH/codeigniter4/settings/src/Handlers/DatabaseHandler.php(186): CodeIgniter\Database\BaseBuilder->get()
+ 3 VENDORPATH/codeigniter4/settings/src/Handlers/DatabaseHandler.php(51): CodeIgniter\Settings\Handlers\DatabaseHandler->hydrate()
+ 4 VENDORPATH/codeigniter4/settings/src/Settings.php(59): CodeIgniter\Settings\Handlers\DatabaseHandler->has()
+ 5 VENDORPATH/codeigniter4/settings/src/Helpers/setting_helper.php(25): CodeIgniter\Settings\Settings->get()
+ 6 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(682): setting()
+ 7 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(700): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserInfo()
+ 8 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(387): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserKey()
+ 9 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(371): CodeIgniter\Shield\Authentication\Authenticators\Session->checkUserState()
+10 VENDORPATH/codeigniter4/shield/src/Auth.php(189): CodeIgniter\Shield\Authentication\Authenticators\Session->loggedIn()
+11 VENDORPATH/codeigniter4/shield/src/Collectors/Auth.php(76): CodeIgniter\Shield\Auth->__call()
+12 SYSTEMPATH/Debug/Toolbar/Collectors/BaseCollector.php(228): CodeIgniter\Shield\Collectors\Auth->display()
+13 SYSTEMPATH/Debug/Toolbar.php(95): CodeIgniter\Debug\Toolbar\Collectors\BaseCollector->getAsArray()
+14 SYSTEMPATH/Debug/Toolbar.php(391): CodeIgniter\Debug\Toolbar->run()
+15 SYSTEMPATH/Filters/DebugToolbar.php(44): CodeIgniter\Debug\Toolbar->prepare()
+16 SYSTEMPATH/Filters/Filters.php(278): CodeIgniter\Filters\DebugToolbar->after()
+17 SYSTEMPATH/Filters/Filters.php(364): CodeIgniter\Filters\Filters->runAfter()
+18 SYSTEMPATH/CodeIgniter.php(407): CodeIgniter\Filters\Filters->runRequired()
+19 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->runRequiredAfterFilters()
+20 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+21 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+22 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2026-04-17 06:44:43 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'dmsDB.settings' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 4 VENDORPATH/codeigniter4/settings/src/Handlers/DatabaseHandler.php(186): CodeIgniter\Database\BaseBuilder->get()
+ 5 VENDORPATH/codeigniter4/settings/src/Handlers/DatabaseHandler.php(51): CodeIgniter\Settings\Handlers\DatabaseHandler->hydrate()
+ 6 VENDORPATH/codeigniter4/settings/src/Settings.php(59): CodeIgniter\Settings\Handlers\DatabaseHandler->has()
+ 7 VENDORPATH/codeigniter4/settings/src/Helpers/setting_helper.php(25): CodeIgniter\Settings\Settings->get()
+ 8 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(682): setting()
+ 9 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(700): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserInfo()
+10 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(387): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserKey()
+11 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(371): CodeIgniter\Shield\Authentication\Authenticators\Session->checkUserState()
+12 VENDORPATH/codeigniter4/shield/src/Auth.php(189): CodeIgniter\Shield\Authentication\Authenticators\Session->loggedIn()
+13 VENDORPATH/codeigniter4/shield/src/Collectors/Auth.php(76): CodeIgniter\Shield\Auth->__call()
+14 SYSTEMPATH/Debug/Toolbar/Collectors/BaseCollector.php(228): CodeIgniter\Shield\Collectors\Auth->display()
+15 SYSTEMPATH/Debug/Toolbar.php(95): CodeIgniter\Debug\Toolbar\Collectors\BaseCollector->getAsArray()
+16 SYSTEMPATH/Debug/Toolbar.php(391): CodeIgniter\Debug\Toolbar->run()
+17 SYSTEMPATH/Filters/DebugToolbar.php(44): CodeIgniter\Debug\Toolbar->prepare()
+18 SYSTEMPATH/Filters/Filters.php(278): CodeIgniter\Filters\DebugToolbar->after()
+19 SYSTEMPATH/Filters/Filters.php(364): CodeIgniter\Filters\Filters->runAfter()
+20 SYSTEMPATH/CodeIgniter.php(407): CodeIgniter\Filters\Filters->runRequired()
+21 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->runRequiredAfterFilters()
+22 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+23 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+24 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2026-04-17 06:44:43 --> [Caused by] mysqli_sql_exception: Table 'dmsDB.settings' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 5 VENDORPATH/codeigniter4/settings/src/Handlers/DatabaseHandler.php(186): CodeIgniter\Database\BaseBuilder->get()
+ 6 VENDORPATH/codeigniter4/settings/src/Handlers/DatabaseHandler.php(51): CodeIgniter\Settings\Handlers\DatabaseHandler->hydrate()
+ 7 VENDORPATH/codeigniter4/settings/src/Settings.php(59): CodeIgniter\Settings\Handlers\DatabaseHandler->has()
+ 8 VENDORPATH/codeigniter4/settings/src/Helpers/setting_helper.php(25): CodeIgniter\Settings\Settings->get()
+ 9 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(682): setting()
+10 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(700): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserInfo()
+11 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(387): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserKey()
+12 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(371): CodeIgniter\Shield\Authentication\Authenticators\Session->checkUserState()
+13 VENDORPATH/codeigniter4/shield/src/Auth.php(189): CodeIgniter\Shield\Authentication\Authenticators\Session->loggedIn()
+14 VENDORPATH/codeigniter4/shield/src/Collectors/Auth.php(76): CodeIgniter\Shield\Auth->__call()
+15 SYSTEMPATH/Debug/Toolbar/Collectors/BaseCollector.php(228): CodeIgniter\Shield\Collectors\Auth->display()
+16 SYSTEMPATH/Debug/Toolbar.php(95): CodeIgniter\Debug\Toolbar\Collectors\BaseCollector->getAsArray()
+17 SYSTEMPATH/Debug/Toolbar.php(391): CodeIgniter\Debug\Toolbar->run()
+18 SYSTEMPATH/Filters/DebugToolbar.php(44): CodeIgniter\Debug\Toolbar->prepare()
+19 SYSTEMPATH/Filters/Filters.php(278): CodeIgniter\Filters\DebugToolbar->after()
+20 SYSTEMPATH/Filters/Filters.php(364): CodeIgniter\Filters\Filters->runAfter()
+21 SYSTEMPATH/CodeIgniter.php(407): CodeIgniter\Filters\Filters->runRequired()
+22 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->runRequiredAfterFilters()
+23 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+24 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+25 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+DEBUG - 2026-04-17 06:44:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-04-17 06:44:46 --> mysqli_sql_exception: Table 'dmsDB.settings' doesn't exist in /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(327): mysqli->query()
+#1 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Database/BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Database/BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/dmsnougaro/vendor/codeigniter4/settings/src/Handlers/DatabaseHandler.php(186): CodeIgniter\Database\BaseBuilder->get()
+#5 /var/www/dmsnougaro/vendor/codeigniter4/settings/src/Handlers/DatabaseHandler.php(51): CodeIgniter\Settings\Handlers\DatabaseHandler->hydrate()
+#6 /var/www/dmsnougaro/vendor/codeigniter4/settings/src/Settings.php(59): CodeIgniter\Settings\Handlers\DatabaseHandler->has()
+#7 /var/www/dmsnougaro/vendor/codeigniter4/settings/src/Helpers/setting_helper.php(25): CodeIgniter\Settings\Settings->get()
+#8 /var/www/dmsnougaro/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(682): setting()
+#9 /var/www/dmsnougaro/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(700): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserInfo()
+#10 /var/www/dmsnougaro/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(387): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserKey()
+#11 /var/www/dmsnougaro/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(371): CodeIgniter\Shield\Authentication\Authenticators\Session->checkUserState()
+#12 /var/www/dmsnougaro/vendor/codeigniter4/shield/src/Auth.php(189): CodeIgniter\Shield\Authentication\Authenticators\Session->loggedIn()
+#13 /var/www/dmsnougaro/vendor/codeigniter4/shield/src/Collectors/Auth.php(76): CodeIgniter\Shield\Auth->__call()
+#14 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/BaseCollector.php(228): CodeIgniter\Shield\Collectors\Auth->display()
+#15 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Debug/Toolbar.php(95): CodeIgniter\Debug\Toolbar\Collectors\BaseCollector->getAsArray()
+#16 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Debug/Toolbar.php(391): CodeIgniter\Debug\Toolbar->run()
+#17 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Filters/DebugToolbar.php(44): CodeIgniter\Debug\Toolbar->prepare()
+#18 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Filters/Filters.php(278): CodeIgniter\Filters\DebugToolbar->after()
+#19 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Filters/Filters.php(364): CodeIgniter\Filters\Filters->runAfter()
+#20 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/CodeIgniter.php(407): CodeIgniter\Filters\Filters->runRequired()
+#21 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->runRequiredAfterFilters()
+#22 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Boot.php(363): CodeIgniter\CodeIgniter->run()
+#23 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#24 /var/www/dmsnougaro/public/index.php(59): CodeIgniter\Boot::bootWeb()
+#25 {main}
+CRITICAL - 2026-04-17 06:44:46 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'dmsDB.settings' doesn't exist
+[Method: GET, Route: /]
+in SYSTEMPATH/Database/BaseConnection.php on line 684.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 2 VENDORPATH/codeigniter4/settings/src/Handlers/DatabaseHandler.php(186): CodeIgniter\Database\BaseBuilder->get()
+ 3 VENDORPATH/codeigniter4/settings/src/Handlers/DatabaseHandler.php(51): CodeIgniter\Settings\Handlers\DatabaseHandler->hydrate()
+ 4 VENDORPATH/codeigniter4/settings/src/Settings.php(59): CodeIgniter\Settings\Handlers\DatabaseHandler->has()
+ 5 VENDORPATH/codeigniter4/settings/src/Helpers/setting_helper.php(25): CodeIgniter\Settings\Settings->get()
+ 6 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(682): setting()
+ 7 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(700): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserInfo()
+ 8 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(387): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserKey()
+ 9 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(371): CodeIgniter\Shield\Authentication\Authenticators\Session->checkUserState()
+10 VENDORPATH/codeigniter4/shield/src/Auth.php(189): CodeIgniter\Shield\Authentication\Authenticators\Session->loggedIn()
+11 VENDORPATH/codeigniter4/shield/src/Collectors/Auth.php(76): CodeIgniter\Shield\Auth->__call()
+12 SYSTEMPATH/Debug/Toolbar/Collectors/BaseCollector.php(228): CodeIgniter\Shield\Collectors\Auth->display()
+13 SYSTEMPATH/Debug/Toolbar.php(95): CodeIgniter\Debug\Toolbar\Collectors\BaseCollector->getAsArray()
+14 SYSTEMPATH/Debug/Toolbar.php(391): CodeIgniter\Debug\Toolbar->run()
+15 SYSTEMPATH/Filters/DebugToolbar.php(44): CodeIgniter\Debug\Toolbar->prepare()
+16 SYSTEMPATH/Filters/Filters.php(278): CodeIgniter\Filters\DebugToolbar->after()
+17 SYSTEMPATH/Filters/Filters.php(364): CodeIgniter\Filters\Filters->runAfter()
+18 SYSTEMPATH/CodeIgniter.php(407): CodeIgniter\Filters\Filters->runRequired()
+19 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->runRequiredAfterFilters()
+20 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+21 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+22 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2026-04-17 06:44:46 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'dmsDB.settings' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 4 VENDORPATH/codeigniter4/settings/src/Handlers/DatabaseHandler.php(186): CodeIgniter\Database\BaseBuilder->get()
+ 5 VENDORPATH/codeigniter4/settings/src/Handlers/DatabaseHandler.php(51): CodeIgniter\Settings\Handlers\DatabaseHandler->hydrate()
+ 6 VENDORPATH/codeigniter4/settings/src/Settings.php(59): CodeIgniter\Settings\Handlers\DatabaseHandler->has()
+ 7 VENDORPATH/codeigniter4/settings/src/Helpers/setting_helper.php(25): CodeIgniter\Settings\Settings->get()
+ 8 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(682): setting()
+ 9 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(700): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserInfo()
+10 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(387): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserKey()
+11 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(371): CodeIgniter\Shield\Authentication\Authenticators\Session->checkUserState()
+12 VENDORPATH/codeigniter4/shield/src/Auth.php(189): CodeIgniter\Shield\Authentication\Authenticators\Session->loggedIn()
+13 VENDORPATH/codeigniter4/shield/src/Collectors/Auth.php(76): CodeIgniter\Shield\Auth->__call()
+14 SYSTEMPATH/Debug/Toolbar/Collectors/BaseCollector.php(228): CodeIgniter\Shield\Collectors\Auth->display()
+15 SYSTEMPATH/Debug/Toolbar.php(95): CodeIgniter\Debug\Toolbar\Collectors\BaseCollector->getAsArray()
+16 SYSTEMPATH/Debug/Toolbar.php(391): CodeIgniter\Debug\Toolbar->run()
+17 SYSTEMPATH/Filters/DebugToolbar.php(44): CodeIgniter\Debug\Toolbar->prepare()
+18 SYSTEMPATH/Filters/Filters.php(278): CodeIgniter\Filters\DebugToolbar->after()
+19 SYSTEMPATH/Filters/Filters.php(364): CodeIgniter\Filters\Filters->runAfter()
+20 SYSTEMPATH/CodeIgniter.php(407): CodeIgniter\Filters\Filters->runRequired()
+21 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->runRequiredAfterFilters()
+22 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+23 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+24 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2026-04-17 06:44:46 --> [Caused by] mysqli_sql_exception: Table 'dmsDB.settings' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 5 VENDORPATH/codeigniter4/settings/src/Handlers/DatabaseHandler.php(186): CodeIgniter\Database\BaseBuilder->get()
+ 6 VENDORPATH/codeigniter4/settings/src/Handlers/DatabaseHandler.php(51): CodeIgniter\Settings\Handlers\DatabaseHandler->hydrate()
+ 7 VENDORPATH/codeigniter4/settings/src/Settings.php(59): CodeIgniter\Settings\Handlers\DatabaseHandler->has()
+ 8 VENDORPATH/codeigniter4/settings/src/Helpers/setting_helper.php(25): CodeIgniter\Settings\Settings->get()
+ 9 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(682): setting()
+10 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(700): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserInfo()
+11 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(387): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserKey()
+12 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(371): CodeIgniter\Shield\Authentication\Authenticators\Session->checkUserState()
+13 VENDORPATH/codeigniter4/shield/src/Auth.php(189): CodeIgniter\Shield\Authentication\Authenticators\Session->loggedIn()
+14 VENDORPATH/codeigniter4/shield/src/Collectors/Auth.php(76): CodeIgniter\Shield\Auth->__call()
+15 SYSTEMPATH/Debug/Toolbar/Collectors/BaseCollector.php(228): CodeIgniter\Shield\Collectors\Auth->display()
+16 SYSTEMPATH/Debug/Toolbar.php(95): CodeIgniter\Debug\Toolbar\Collectors\BaseCollector->getAsArray()
+17 SYSTEMPATH/Debug/Toolbar.php(391): CodeIgniter\Debug\Toolbar->run()
+18 SYSTEMPATH/Filters/DebugToolbar.php(44): CodeIgniter\Debug\Toolbar->prepare()
+19 SYSTEMPATH/Filters/Filters.php(278): CodeIgniter\Filters\DebugToolbar->after()
+20 SYSTEMPATH/Filters/Filters.php(364): CodeIgniter\Filters\Filters->runAfter()
+21 SYSTEMPATH/CodeIgniter.php(407): CodeIgniter\Filters\Filters->runRequired()
+22 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->runRequiredAfterFilters()
+23 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+24 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+25 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+DEBUG - 2026-04-17 06:44:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-04-17 06:44:46 --> mysqli_sql_exception: Table 'dmsDB.settings' doesn't exist in /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(327): mysqli->query()
+#1 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Database/BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Database/BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/dmsnougaro/vendor/codeigniter4/settings/src/Handlers/DatabaseHandler.php(186): CodeIgniter\Database\BaseBuilder->get()
+#5 /var/www/dmsnougaro/vendor/codeigniter4/settings/src/Handlers/DatabaseHandler.php(51): CodeIgniter\Settings\Handlers\DatabaseHandler->hydrate()
+#6 /var/www/dmsnougaro/vendor/codeigniter4/settings/src/Settings.php(59): CodeIgniter\Settings\Handlers\DatabaseHandler->has()
+#7 /var/www/dmsnougaro/vendor/codeigniter4/settings/src/Helpers/setting_helper.php(25): CodeIgniter\Settings\Settings->get()
+#8 /var/www/dmsnougaro/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(682): setting()
+#9 /var/www/dmsnougaro/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(700): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserInfo()
+#10 /var/www/dmsnougaro/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(387): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserKey()
+#11 /var/www/dmsnougaro/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(371): CodeIgniter\Shield\Authentication\Authenticators\Session->checkUserState()
+#12 /var/www/dmsnougaro/vendor/codeigniter4/shield/src/Auth.php(189): CodeIgniter\Shield\Authentication\Authenticators\Session->loggedIn()
+#13 /var/www/dmsnougaro/vendor/codeigniter4/shield/src/Collectors/Auth.php(76): CodeIgniter\Shield\Auth->__call()
+#14 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/BaseCollector.php(228): CodeIgniter\Shield\Collectors\Auth->display()
+#15 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Debug/Toolbar.php(95): CodeIgniter\Debug\Toolbar\Collectors\BaseCollector->getAsArray()
+#16 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Debug/Toolbar.php(391): CodeIgniter\Debug\Toolbar->run()
+#17 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Filters/DebugToolbar.php(44): CodeIgniter\Debug\Toolbar->prepare()
+#18 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Filters/Filters.php(278): CodeIgniter\Filters\DebugToolbar->after()
+#19 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Filters/Filters.php(364): CodeIgniter\Filters\Filters->runAfter()
+#20 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/CodeIgniter.php(407): CodeIgniter\Filters\Filters->runRequired()
+#21 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->runRequiredAfterFilters()
+#22 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Boot.php(363): CodeIgniter\CodeIgniter->run()
+#23 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#24 /var/www/dmsnougaro/public/index.php(59): CodeIgniter\Boot::bootWeb()
+#25 {main}
+CRITICAL - 2026-04-17 06:44:46 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'dmsDB.settings' doesn't exist
+[Method: GET, Route: /]
+in SYSTEMPATH/Database/BaseConnection.php on line 684.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 2 VENDORPATH/codeigniter4/settings/src/Handlers/DatabaseHandler.php(186): CodeIgniter\Database\BaseBuilder->get()
+ 3 VENDORPATH/codeigniter4/settings/src/Handlers/DatabaseHandler.php(51): CodeIgniter\Settings\Handlers\DatabaseHandler->hydrate()
+ 4 VENDORPATH/codeigniter4/settings/src/Settings.php(59): CodeIgniter\Settings\Handlers\DatabaseHandler->has()
+ 5 VENDORPATH/codeigniter4/settings/src/Helpers/setting_helper.php(25): CodeIgniter\Settings\Settings->get()
+ 6 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(682): setting()
+ 7 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(700): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserInfo()
+ 8 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(387): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserKey()
+ 9 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(371): CodeIgniter\Shield\Authentication\Authenticators\Session->checkUserState()
+10 VENDORPATH/codeigniter4/shield/src/Auth.php(189): CodeIgniter\Shield\Authentication\Authenticators\Session->loggedIn()
+11 VENDORPATH/codeigniter4/shield/src/Collectors/Auth.php(76): CodeIgniter\Shield\Auth->__call()
+12 SYSTEMPATH/Debug/Toolbar/Collectors/BaseCollector.php(228): CodeIgniter\Shield\Collectors\Auth->display()
+13 SYSTEMPATH/Debug/Toolbar.php(95): CodeIgniter\Debug\Toolbar\Collectors\BaseCollector->getAsArray()
+14 SYSTEMPATH/Debug/Toolbar.php(391): CodeIgniter\Debug\Toolbar->run()
+15 SYSTEMPATH/Filters/DebugToolbar.php(44): CodeIgniter\Debug\Toolbar->prepare()
+16 SYSTEMPATH/Filters/Filters.php(278): CodeIgniter\Filters\DebugToolbar->after()
+17 SYSTEMPATH/Filters/Filters.php(364): CodeIgniter\Filters\Filters->runAfter()
+18 SYSTEMPATH/CodeIgniter.php(407): CodeIgniter\Filters\Filters->runRequired()
+19 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->runRequiredAfterFilters()
+20 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+21 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+22 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2026-04-17 06:44:46 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'dmsDB.settings' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 4 VENDORPATH/codeigniter4/settings/src/Handlers/DatabaseHandler.php(186): CodeIgniter\Database\BaseBuilder->get()
+ 5 VENDORPATH/codeigniter4/settings/src/Handlers/DatabaseHandler.php(51): CodeIgniter\Settings\Handlers\DatabaseHandler->hydrate()
+ 6 VENDORPATH/codeigniter4/settings/src/Settings.php(59): CodeIgniter\Settings\Handlers\DatabaseHandler->has()
+ 7 VENDORPATH/codeigniter4/settings/src/Helpers/setting_helper.php(25): CodeIgniter\Settings\Settings->get()
+ 8 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(682): setting()
+ 9 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(700): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserInfo()
+10 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(387): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserKey()
+11 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(371): CodeIgniter\Shield\Authentication\Authenticators\Session->checkUserState()
+12 VENDORPATH/codeigniter4/shield/src/Auth.php(189): CodeIgniter\Shield\Authentication\Authenticators\Session->loggedIn()
+13 VENDORPATH/codeigniter4/shield/src/Collectors/Auth.php(76): CodeIgniter\Shield\Auth->__call()
+14 SYSTEMPATH/Debug/Toolbar/Collectors/BaseCollector.php(228): CodeIgniter\Shield\Collectors\Auth->display()
+15 SYSTEMPATH/Debug/Toolbar.php(95): CodeIgniter\Debug\Toolbar\Collectors\BaseCollector->getAsArray()
+16 SYSTEMPATH/Debug/Toolbar.php(391): CodeIgniter\Debug\Toolbar->run()
+17 SYSTEMPATH/Filters/DebugToolbar.php(44): CodeIgniter\Debug\Toolbar->prepare()
+18 SYSTEMPATH/Filters/Filters.php(278): CodeIgniter\Filters\DebugToolbar->after()
+19 SYSTEMPATH/Filters/Filters.php(364): CodeIgniter\Filters\Filters->runAfter()
+20 SYSTEMPATH/CodeIgniter.php(407): CodeIgniter\Filters\Filters->runRequired()
+21 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->runRequiredAfterFilters()
+22 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+23 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+24 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2026-04-17 06:44:46 --> [Caused by] mysqli_sql_exception: Table 'dmsDB.settings' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 5 VENDORPATH/codeigniter4/settings/src/Handlers/DatabaseHandler.php(186): CodeIgniter\Database\BaseBuilder->get()
+ 6 VENDORPATH/codeigniter4/settings/src/Handlers/DatabaseHandler.php(51): CodeIgniter\Settings\Handlers\DatabaseHandler->hydrate()
+ 7 VENDORPATH/codeigniter4/settings/src/Settings.php(59): CodeIgniter\Settings\Handlers\DatabaseHandler->has()
+ 8 VENDORPATH/codeigniter4/settings/src/Helpers/setting_helper.php(25): CodeIgniter\Settings\Settings->get()
+ 9 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(682): setting()
+10 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(700): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserInfo()
+11 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(387): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserKey()
+12 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(371): CodeIgniter\Shield\Authentication\Authenticators\Session->checkUserState()
+13 VENDORPATH/codeigniter4/shield/src/Auth.php(189): CodeIgniter\Shield\Authentication\Authenticators\Session->loggedIn()
+14 VENDORPATH/codeigniter4/shield/src/Collectors/Auth.php(76): CodeIgniter\Shield\Auth->__call()
+15 SYSTEMPATH/Debug/Toolbar/Collectors/BaseCollector.php(228): CodeIgniter\Shield\Collectors\Auth->display()
+16 SYSTEMPATH/Debug/Toolbar.php(95): CodeIgniter\Debug\Toolbar\Collectors\BaseCollector->getAsArray()
+17 SYSTEMPATH/Debug/Toolbar.php(391): CodeIgniter\Debug\Toolbar->run()
+18 SYSTEMPATH/Filters/DebugToolbar.php(44): CodeIgniter\Debug\Toolbar->prepare()
+19 SYSTEMPATH/Filters/Filters.php(278): CodeIgniter\Filters\DebugToolbar->after()
+20 SYSTEMPATH/Filters/Filters.php(364): CodeIgniter\Filters\Filters->runAfter()
+21 SYSTEMPATH/CodeIgniter.php(407): CodeIgniter\Filters\Filters->runRequired()
+22 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->runRequiredAfterFilters()
+23 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+24 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+25 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+DEBUG - 2026-04-17 06:44:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-04-17 06:44:46 --> mysqli_sql_exception: Table 'dmsDB.settings' doesn't exist in /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(327): mysqli->query()
+#1 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Database/BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Database/BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/dmsnougaro/vendor/codeigniter4/settings/src/Handlers/DatabaseHandler.php(186): CodeIgniter\Database\BaseBuilder->get()
+#5 /var/www/dmsnougaro/vendor/codeigniter4/settings/src/Handlers/DatabaseHandler.php(51): CodeIgniter\Settings\Handlers\DatabaseHandler->hydrate()
+#6 /var/www/dmsnougaro/vendor/codeigniter4/settings/src/Settings.php(59): CodeIgniter\Settings\Handlers\DatabaseHandler->has()
+#7 /var/www/dmsnougaro/vendor/codeigniter4/settings/src/Helpers/setting_helper.php(25): CodeIgniter\Settings\Settings->get()
+#8 /var/www/dmsnougaro/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(682): setting()
+#9 /var/www/dmsnougaro/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(700): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserInfo()
+#10 /var/www/dmsnougaro/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(387): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserKey()
+#11 /var/www/dmsnougaro/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(371): CodeIgniter\Shield\Authentication\Authenticators\Session->checkUserState()
+#12 /var/www/dmsnougaro/vendor/codeigniter4/shield/src/Auth.php(189): CodeIgniter\Shield\Authentication\Authenticators\Session->loggedIn()
+#13 /var/www/dmsnougaro/vendor/codeigniter4/shield/src/Collectors/Auth.php(76): CodeIgniter\Shield\Auth->__call()
+#14 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/BaseCollector.php(228): CodeIgniter\Shield\Collectors\Auth->display()
+#15 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Debug/Toolbar.php(95): CodeIgniter\Debug\Toolbar\Collectors\BaseCollector->getAsArray()
+#16 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Debug/Toolbar.php(391): CodeIgniter\Debug\Toolbar->run()
+#17 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Filters/DebugToolbar.php(44): CodeIgniter\Debug\Toolbar->prepare()
+#18 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Filters/Filters.php(278): CodeIgniter\Filters\DebugToolbar->after()
+#19 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Filters/Filters.php(364): CodeIgniter\Filters\Filters->runAfter()
+#20 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/CodeIgniter.php(407): CodeIgniter\Filters\Filters->runRequired()
+#21 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->runRequiredAfterFilters()
+#22 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Boot.php(363): CodeIgniter\CodeIgniter->run()
+#23 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#24 /var/www/dmsnougaro/public/index.php(59): CodeIgniter\Boot::bootWeb()
+#25 {main}
+CRITICAL - 2026-04-17 06:44:46 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'dmsDB.settings' doesn't exist
+[Method: GET, Route: /]
+in SYSTEMPATH/Database/BaseConnection.php on line 684.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 2 VENDORPATH/codeigniter4/settings/src/Handlers/DatabaseHandler.php(186): CodeIgniter\Database\BaseBuilder->get()
+ 3 VENDORPATH/codeigniter4/settings/src/Handlers/DatabaseHandler.php(51): CodeIgniter\Settings\Handlers\DatabaseHandler->hydrate()
+ 4 VENDORPATH/codeigniter4/settings/src/Settings.php(59): CodeIgniter\Settings\Handlers\DatabaseHandler->has()
+ 5 VENDORPATH/codeigniter4/settings/src/Helpers/setting_helper.php(25): CodeIgniter\Settings\Settings->get()
+ 6 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(682): setting()
+ 7 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(700): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserInfo()
+ 8 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(387): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserKey()
+ 9 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(371): CodeIgniter\Shield\Authentication\Authenticators\Session->checkUserState()
+10 VENDORPATH/codeigniter4/shield/src/Auth.php(189): CodeIgniter\Shield\Authentication\Authenticators\Session->loggedIn()
+11 VENDORPATH/codeigniter4/shield/src/Collectors/Auth.php(76): CodeIgniter\Shield\Auth->__call()
+12 SYSTEMPATH/Debug/Toolbar/Collectors/BaseCollector.php(228): CodeIgniter\Shield\Collectors\Auth->display()
+13 SYSTEMPATH/Debug/Toolbar.php(95): CodeIgniter\Debug\Toolbar\Collectors\BaseCollector->getAsArray()
+14 SYSTEMPATH/Debug/Toolbar.php(391): CodeIgniter\Debug\Toolbar->run()
+15 SYSTEMPATH/Filters/DebugToolbar.php(44): CodeIgniter\Debug\Toolbar->prepare()
+16 SYSTEMPATH/Filters/Filters.php(278): CodeIgniter\Filters\DebugToolbar->after()
+17 SYSTEMPATH/Filters/Filters.php(364): CodeIgniter\Filters\Filters->runAfter()
+18 SYSTEMPATH/CodeIgniter.php(407): CodeIgniter\Filters\Filters->runRequired()
+19 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->runRequiredAfterFilters()
+20 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+21 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+22 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2026-04-17 06:44:46 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'dmsDB.settings' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 4 VENDORPATH/codeigniter4/settings/src/Handlers/DatabaseHandler.php(186): CodeIgniter\Database\BaseBuilder->get()
+ 5 VENDORPATH/codeigniter4/settings/src/Handlers/DatabaseHandler.php(51): CodeIgniter\Settings\Handlers\DatabaseHandler->hydrate()
+ 6 VENDORPATH/codeigniter4/settings/src/Settings.php(59): CodeIgniter\Settings\Handlers\DatabaseHandler->has()
+ 7 VENDORPATH/codeigniter4/settings/src/Helpers/setting_helper.php(25): CodeIgniter\Settings\Settings->get()
+ 8 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(682): setting()
+ 9 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(700): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserInfo()
+10 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(387): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserKey()
+11 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(371): CodeIgniter\Shield\Authentication\Authenticators\Session->checkUserState()
+12 VENDORPATH/codeigniter4/shield/src/Auth.php(189): CodeIgniter\Shield\Authentication\Authenticators\Session->loggedIn()
+13 VENDORPATH/codeigniter4/shield/src/Collectors/Auth.php(76): CodeIgniter\Shield\Auth->__call()
+14 SYSTEMPATH/Debug/Toolbar/Collectors/BaseCollector.php(228): CodeIgniter\Shield\Collectors\Auth->display()
+15 SYSTEMPATH/Debug/Toolbar.php(95): CodeIgniter\Debug\Toolbar\Collectors\BaseCollector->getAsArray()
+16 SYSTEMPATH/Debug/Toolbar.php(391): CodeIgniter\Debug\Toolbar->run()
+17 SYSTEMPATH/Filters/DebugToolbar.php(44): CodeIgniter\Debug\Toolbar->prepare()
+18 SYSTEMPATH/Filters/Filters.php(278): CodeIgniter\Filters\DebugToolbar->after()
+19 SYSTEMPATH/Filters/Filters.php(364): CodeIgniter\Filters\Filters->runAfter()
+20 SYSTEMPATH/CodeIgniter.php(407): CodeIgniter\Filters\Filters->runRequired()
+21 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->runRequiredAfterFilters()
+22 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+23 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+24 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2026-04-17 06:44:46 --> [Caused by] mysqli_sql_exception: Table 'dmsDB.settings' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 5 VENDORPATH/codeigniter4/settings/src/Handlers/DatabaseHandler.php(186): CodeIgniter\Database\BaseBuilder->get()
+ 6 VENDORPATH/codeigniter4/settings/src/Handlers/DatabaseHandler.php(51): CodeIgniter\Settings\Handlers\DatabaseHandler->hydrate()
+ 7 VENDORPATH/codeigniter4/settings/src/Settings.php(59): CodeIgniter\Settings\Handlers\DatabaseHandler->has()
+ 8 VENDORPATH/codeigniter4/settings/src/Helpers/setting_helper.php(25): CodeIgniter\Settings\Settings->get()
+ 9 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(682): setting()
+10 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(700): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserInfo()
+11 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(387): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserKey()
+12 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(371): CodeIgniter\Shield\Authentication\Authenticators\Session->checkUserState()
+13 VENDORPATH/codeigniter4/shield/src/Auth.php(189): CodeIgniter\Shield\Authentication\Authenticators\Session->loggedIn()
+14 VENDORPATH/codeigniter4/shield/src/Collectors/Auth.php(76): CodeIgniter\Shield\Auth->__call()
+15 SYSTEMPATH/Debug/Toolbar/Collectors/BaseCollector.php(228): CodeIgniter\Shield\Collectors\Auth->display()
+16 SYSTEMPATH/Debug/Toolbar.php(95): CodeIgniter\Debug\Toolbar\Collectors\BaseCollector->getAsArray()
+17 SYSTEMPATH/Debug/Toolbar.php(391): CodeIgniter\Debug\Toolbar->run()
+18 SYSTEMPATH/Filters/DebugToolbar.php(44): CodeIgniter\Debug\Toolbar->prepare()
+19 SYSTEMPATH/Filters/Filters.php(278): CodeIgniter\Filters\DebugToolbar->after()
+20 SYSTEMPATH/Filters/Filters.php(364): CodeIgniter\Filters\Filters->runAfter()
+21 SYSTEMPATH/CodeIgniter.php(407): CodeIgniter\Filters\Filters->runRequired()
+22 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->runRequiredAfterFilters()
+23 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+24 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+25 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+DEBUG - 2026-04-17 06:44:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-04-17 06:44:46 --> mysqli_sql_exception: Table 'dmsDB.settings' doesn't exist in /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(327): mysqli->query()
+#1 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Database/BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Database/BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/dmsnougaro/vendor/codeigniter4/settings/src/Handlers/DatabaseHandler.php(186): CodeIgniter\Database\BaseBuilder->get()
+#5 /var/www/dmsnougaro/vendor/codeigniter4/settings/src/Handlers/DatabaseHandler.php(51): CodeIgniter\Settings\Handlers\DatabaseHandler->hydrate()
+#6 /var/www/dmsnougaro/vendor/codeigniter4/settings/src/Settings.php(59): CodeIgniter\Settings\Handlers\DatabaseHandler->has()
+#7 /var/www/dmsnougaro/vendor/codeigniter4/settings/src/Helpers/setting_helper.php(25): CodeIgniter\Settings\Settings->get()
+#8 /var/www/dmsnougaro/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(682): setting()
+#9 /var/www/dmsnougaro/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(700): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserInfo()
+#10 /var/www/dmsnougaro/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(387): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserKey()
+#11 /var/www/dmsnougaro/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(371): CodeIgniter\Shield\Authentication\Authenticators\Session->checkUserState()
+#12 /var/www/dmsnougaro/vendor/codeigniter4/shield/src/Auth.php(189): CodeIgniter\Shield\Authentication\Authenticators\Session->loggedIn()
+#13 /var/www/dmsnougaro/vendor/codeigniter4/shield/src/Collectors/Auth.php(76): CodeIgniter\Shield\Auth->__call()
+#14 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/BaseCollector.php(228): CodeIgniter\Shield\Collectors\Auth->display()
+#15 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Debug/Toolbar.php(95): CodeIgniter\Debug\Toolbar\Collectors\BaseCollector->getAsArray()
+#16 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Debug/Toolbar.php(391): CodeIgniter\Debug\Toolbar->run()
+#17 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Filters/DebugToolbar.php(44): CodeIgniter\Debug\Toolbar->prepare()
+#18 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Filters/Filters.php(278): CodeIgniter\Filters\DebugToolbar->after()
+#19 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Filters/Filters.php(364): CodeIgniter\Filters\Filters->runAfter()
+#20 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/CodeIgniter.php(407): CodeIgniter\Filters\Filters->runRequired()
+#21 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->runRequiredAfterFilters()
+#22 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Boot.php(363): CodeIgniter\CodeIgniter->run()
+#23 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#24 /var/www/dmsnougaro/public/index.php(59): CodeIgniter\Boot::bootWeb()
+#25 {main}
+CRITICAL - 2026-04-17 06:44:46 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'dmsDB.settings' doesn't exist
+[Method: GET, Route: /]
+in SYSTEMPATH/Database/BaseConnection.php on line 684.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 2 VENDORPATH/codeigniter4/settings/src/Handlers/DatabaseHandler.php(186): CodeIgniter\Database\BaseBuilder->get()
+ 3 VENDORPATH/codeigniter4/settings/src/Handlers/DatabaseHandler.php(51): CodeIgniter\Settings\Handlers\DatabaseHandler->hydrate()
+ 4 VENDORPATH/codeigniter4/settings/src/Settings.php(59): CodeIgniter\Settings\Handlers\DatabaseHandler->has()
+ 5 VENDORPATH/codeigniter4/settings/src/Helpers/setting_helper.php(25): CodeIgniter\Settings\Settings->get()
+ 6 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(682): setting()
+ 7 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(700): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserInfo()
+ 8 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(387): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserKey()
+ 9 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(371): CodeIgniter\Shield\Authentication\Authenticators\Session->checkUserState()
+10 VENDORPATH/codeigniter4/shield/src/Auth.php(189): CodeIgniter\Shield\Authentication\Authenticators\Session->loggedIn()
+11 VENDORPATH/codeigniter4/shield/src/Collectors/Auth.php(76): CodeIgniter\Shield\Auth->__call()
+12 SYSTEMPATH/Debug/Toolbar/Collectors/BaseCollector.php(228): CodeIgniter\Shield\Collectors\Auth->display()
+13 SYSTEMPATH/Debug/Toolbar.php(95): CodeIgniter\Debug\Toolbar\Collectors\BaseCollector->getAsArray()
+14 SYSTEMPATH/Debug/Toolbar.php(391): CodeIgniter\Debug\Toolbar->run()
+15 SYSTEMPATH/Filters/DebugToolbar.php(44): CodeIgniter\Debug\Toolbar->prepare()
+16 SYSTEMPATH/Filters/Filters.php(278): CodeIgniter\Filters\DebugToolbar->after()
+17 SYSTEMPATH/Filters/Filters.php(364): CodeIgniter\Filters\Filters->runAfter()
+18 SYSTEMPATH/CodeIgniter.php(407): CodeIgniter\Filters\Filters->runRequired()
+19 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->runRequiredAfterFilters()
+20 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+21 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+22 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2026-04-17 06:44:46 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'dmsDB.settings' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 4 VENDORPATH/codeigniter4/settings/src/Handlers/DatabaseHandler.php(186): CodeIgniter\Database\BaseBuilder->get()
+ 5 VENDORPATH/codeigniter4/settings/src/Handlers/DatabaseHandler.php(51): CodeIgniter\Settings\Handlers\DatabaseHandler->hydrate()
+ 6 VENDORPATH/codeigniter4/settings/src/Settings.php(59): CodeIgniter\Settings\Handlers\DatabaseHandler->has()
+ 7 VENDORPATH/codeigniter4/settings/src/Helpers/setting_helper.php(25): CodeIgniter\Settings\Settings->get()
+ 8 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(682): setting()
+ 9 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(700): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserInfo()
+10 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(387): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserKey()
+11 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(371): CodeIgniter\Shield\Authentication\Authenticators\Session->checkUserState()
+12 VENDORPATH/codeigniter4/shield/src/Auth.php(189): CodeIgniter\Shield\Authentication\Authenticators\Session->loggedIn()
+13 VENDORPATH/codeigniter4/shield/src/Collectors/Auth.php(76): CodeIgniter\Shield\Auth->__call()
+14 SYSTEMPATH/Debug/Toolbar/Collectors/BaseCollector.php(228): CodeIgniter\Shield\Collectors\Auth->display()
+15 SYSTEMPATH/Debug/Toolbar.php(95): CodeIgniter\Debug\Toolbar\Collectors\BaseCollector->getAsArray()
+16 SYSTEMPATH/Debug/Toolbar.php(391): CodeIgniter\Debug\Toolbar->run()
+17 SYSTEMPATH/Filters/DebugToolbar.php(44): CodeIgniter\Debug\Toolbar->prepare()
+18 SYSTEMPATH/Filters/Filters.php(278): CodeIgniter\Filters\DebugToolbar->after()
+19 SYSTEMPATH/Filters/Filters.php(364): CodeIgniter\Filters\Filters->runAfter()
+20 SYSTEMPATH/CodeIgniter.php(407): CodeIgniter\Filters\Filters->runRequired()
+21 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->runRequiredAfterFilters()
+22 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+23 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+24 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2026-04-17 06:44:46 --> [Caused by] mysqli_sql_exception: Table 'dmsDB.settings' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 5 VENDORPATH/codeigniter4/settings/src/Handlers/DatabaseHandler.php(186): CodeIgniter\Database\BaseBuilder->get()
+ 6 VENDORPATH/codeigniter4/settings/src/Handlers/DatabaseHandler.php(51): CodeIgniter\Settings\Handlers\DatabaseHandler->hydrate()
+ 7 VENDORPATH/codeigniter4/settings/src/Settings.php(59): CodeIgniter\Settings\Handlers\DatabaseHandler->has()
+ 8 VENDORPATH/codeigniter4/settings/src/Helpers/setting_helper.php(25): CodeIgniter\Settings\Settings->get()
+ 9 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(682): setting()
+10 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(700): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserInfo()
+11 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(387): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserKey()
+12 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(371): CodeIgniter\Shield\Authentication\Authenticators\Session->checkUserState()
+13 VENDORPATH/codeigniter4/shield/src/Auth.php(189): CodeIgniter\Shield\Authentication\Authenticators\Session->loggedIn()
+14 VENDORPATH/codeigniter4/shield/src/Collectors/Auth.php(76): CodeIgniter\Shield\Auth->__call()
+15 SYSTEMPATH/Debug/Toolbar/Collectors/BaseCollector.php(228): CodeIgniter\Shield\Collectors\Auth->display()
+16 SYSTEMPATH/Debug/Toolbar.php(95): CodeIgniter\Debug\Toolbar\Collectors\BaseCollector->getAsArray()
+17 SYSTEMPATH/Debug/Toolbar.php(391): CodeIgniter\Debug\Toolbar->run()
+18 SYSTEMPATH/Filters/DebugToolbar.php(44): CodeIgniter\Debug\Toolbar->prepare()
+19 SYSTEMPATH/Filters/Filters.php(278): CodeIgniter\Filters\DebugToolbar->after()
+20 SYSTEMPATH/Filters/Filters.php(364): CodeIgniter\Filters\Filters->runAfter()
+21 SYSTEMPATH/CodeIgniter.php(407): CodeIgniter\Filters\Filters->runRequired()
+22 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->runRequiredAfterFilters()
+23 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+24 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+25 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+DEBUG - 2026-04-17 06:44:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-04-17 06:44:46 --> mysqli_sql_exception: Table 'dmsDB.settings' doesn't exist in /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(327): mysqli->query()
+#1 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Database/BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Database/BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/dmsnougaro/vendor/codeigniter4/settings/src/Handlers/DatabaseHandler.php(186): CodeIgniter\Database\BaseBuilder->get()
+#5 /var/www/dmsnougaro/vendor/codeigniter4/settings/src/Handlers/DatabaseHandler.php(51): CodeIgniter\Settings\Handlers\DatabaseHandler->hydrate()
+#6 /var/www/dmsnougaro/vendor/codeigniter4/settings/src/Settings.php(59): CodeIgniter\Settings\Handlers\DatabaseHandler->has()
+#7 /var/www/dmsnougaro/vendor/codeigniter4/settings/src/Helpers/setting_helper.php(25): CodeIgniter\Settings\Settings->get()
+#8 /var/www/dmsnougaro/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(682): setting()
+#9 /var/www/dmsnougaro/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(700): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserInfo()
+#10 /var/www/dmsnougaro/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(387): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserKey()
+#11 /var/www/dmsnougaro/vendor/codeigniter4/shield/src/Authentication/Authenticators/Session.php(371): CodeIgniter\Shield\Authentication\Authenticators\Session->checkUserState()
+#12 /var/www/dmsnougaro/vendor/codeigniter4/shield/src/Auth.php(189): CodeIgniter\Shield\Authentication\Authenticators\Session->loggedIn()
+#13 /var/www/dmsnougaro/vendor/codeigniter4/shield/src/Collectors/Auth.php(76): CodeIgniter\Shield\Auth->__call()
+#14 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/BaseCollector.php(228): CodeIgniter\Shield\Collectors\Auth->display()
+#15 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Debug/Toolbar.php(95): CodeIgniter\Debug\Toolbar\Collectors\BaseCollector->getAsArray()
+#16 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Debug/Toolbar.php(391): CodeIgniter\Debug\Toolbar->run()
+#17 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Filters/DebugToolbar.php(44): CodeIgniter\Debug\Toolbar->prepare()
+#18 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Filters/Filters.php(278): CodeIgniter\Filters\DebugToolbar->after()
+#19 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Filters/Filters.php(364): CodeIgniter\Filters\Filters->runAfter()
+#20 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/CodeIgniter.php(407): CodeIgniter\Filters\Filters->runRequired()
+#21 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->runRequiredAfterFilters()
+#22 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Boot.php(363): CodeIgniter\CodeIgniter->run()
+#23 /var/www/dmsnougaro/vendor/codeigniter4/framework/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#24 /var/www/dmsnougaro/public/index.php(59): CodeIgniter\Boot::bootWeb()
+#25 {main}
+CRITICAL - 2026-04-17 06:44:46 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'dmsDB.settings' doesn't exist
+[Method: GET, Route: /]
+in SYSTEMPATH/Database/BaseConnection.php on line 684.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 2 VENDORPATH/codeigniter4/settings/src/Handlers/DatabaseHandler.php(186): CodeIgniter\Database\BaseBuilder->get()
+ 3 VENDORPATH/codeigniter4/settings/src/Handlers/DatabaseHandler.php(51): CodeIgniter\Settings\Handlers\DatabaseHandler->hydrate()
+ 4 VENDORPATH/codeigniter4/settings/src/Settings.php(59): CodeIgniter\Settings\Handlers\DatabaseHandler->has()
+ 5 VENDORPATH/codeigniter4/settings/src/Helpers/setting_helper.php(25): CodeIgniter\Settings\Settings->get()
+ 6 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(682): setting()
+ 7 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(700): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserInfo()
+ 8 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(387): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserKey()
+ 9 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(371): CodeIgniter\Shield\Authentication\Authenticators\Session->checkUserState()
+10 VENDORPATH/codeigniter4/shield/src/Auth.php(189): CodeIgniter\Shield\Authentication\Authenticators\Session->loggedIn()
+11 VENDORPATH/codeigniter4/shield/src/Collectors/Auth.php(76): CodeIgniter\Shield\Auth->__call()
+12 SYSTEMPATH/Debug/Toolbar/Collectors/BaseCollector.php(228): CodeIgniter\Shield\Collectors\Auth->display()
+13 SYSTEMPATH/Debug/Toolbar.php(95): CodeIgniter\Debug\Toolbar\Collectors\BaseCollector->getAsArray()
+14 SYSTEMPATH/Debug/Toolbar.php(391): CodeIgniter\Debug\Toolbar->run()
+15 SYSTEMPATH/Filters/DebugToolbar.php(44): CodeIgniter\Debug\Toolbar->prepare()
+16 SYSTEMPATH/Filters/Filters.php(278): CodeIgniter\Filters\DebugToolbar->after()
+17 SYSTEMPATH/Filters/Filters.php(364): CodeIgniter\Filters\Filters->runAfter()
+18 SYSTEMPATH/CodeIgniter.php(407): CodeIgniter\Filters\Filters->runRequired()
+19 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->runRequiredAfterFilters()
+20 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+21 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+22 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2026-04-17 06:44:46 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'dmsDB.settings' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 4 VENDORPATH/codeigniter4/settings/src/Handlers/DatabaseHandler.php(186): CodeIgniter\Database\BaseBuilder->get()
+ 5 VENDORPATH/codeigniter4/settings/src/Handlers/DatabaseHandler.php(51): CodeIgniter\Settings\Handlers\DatabaseHandler->hydrate()
+ 6 VENDORPATH/codeigniter4/settings/src/Settings.php(59): CodeIgniter\Settings\Handlers\DatabaseHandler->has()
+ 7 VENDORPATH/codeigniter4/settings/src/Helpers/setting_helper.php(25): CodeIgniter\Settings\Settings->get()
+ 8 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(682): setting()
+ 9 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(700): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserInfo()
+10 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(387): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserKey()
+11 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(371): CodeIgniter\Shield\Authentication\Authenticators\Session->checkUserState()
+12 VENDORPATH/codeigniter4/shield/src/Auth.php(189): CodeIgniter\Shield\Authentication\Authenticators\Session->loggedIn()
+13 VENDORPATH/codeigniter4/shield/src/Collectors/Auth.php(76): CodeIgniter\Shield\Auth->__call()
+14 SYSTEMPATH/Debug/Toolbar/Collectors/BaseCollector.php(228): CodeIgniter\Shield\Collectors\Auth->display()
+15 SYSTEMPATH/Debug/Toolbar.php(95): CodeIgniter\Debug\Toolbar\Collectors\BaseCollector->getAsArray()
+16 SYSTEMPATH/Debug/Toolbar.php(391): CodeIgniter\Debug\Toolbar->run()
+17 SYSTEMPATH/Filters/DebugToolbar.php(44): CodeIgniter\Debug\Toolbar->prepare()
+18 SYSTEMPATH/Filters/Filters.php(278): CodeIgniter\Filters\DebugToolbar->after()
+19 SYSTEMPATH/Filters/Filters.php(364): CodeIgniter\Filters\Filters->runAfter()
+20 SYSTEMPATH/CodeIgniter.php(407): CodeIgniter\Filters\Filters->runRequired()
+21 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->runRequiredAfterFilters()
+22 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+23 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+24 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2026-04-17 06:44:46 --> [Caused by] mysqli_sql_exception: Table 'dmsDB.settings' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 5 VENDORPATH/codeigniter4/settings/src/Handlers/DatabaseHandler.php(186): CodeIgniter\Database\BaseBuilder->get()
+ 6 VENDORPATH/codeigniter4/settings/src/Handlers/DatabaseHandler.php(51): CodeIgniter\Settings\Handlers\DatabaseHandler->hydrate()
+ 7 VENDORPATH/codeigniter4/settings/src/Settings.php(59): CodeIgniter\Settings\Handlers\DatabaseHandler->has()
+ 8 VENDORPATH/codeigniter4/settings/src/Helpers/setting_helper.php(25): CodeIgniter\Settings\Settings->get()
+ 9 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(682): setting()
+10 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(700): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserInfo()
+11 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(387): CodeIgniter\Shield\Authentication\Authenticators\Session->getSessionUserKey()
+12 VENDORPATH/codeigniter4/shield/src/Authentication/Authenticators/Session.php(371): CodeIgniter\Shield\Authentication\Authenticators\Session->checkUserState()
+13 VENDORPATH/codeigniter4/shield/src/Auth.php(189): CodeIgniter\Shield\Authentication\Authenticators\Session->loggedIn()
+14 VENDORPATH/codeigniter4/shield/src/Collectors/Auth.php(76): CodeIgniter\Shield\Auth->__call()
+15 SYSTEMPATH/Debug/Toolbar/Collectors/BaseCollector.php(228): CodeIgniter\Shield\Collectors\Auth->display()
+16 SYSTEMPATH/Debug/Toolbar.php(95): CodeIgniter\Debug\Toolbar\Collectors\BaseCollector->getAsArray()
+17 SYSTEMPATH/Debug/Toolbar.php(391): CodeIgniter\Debug\Toolbar->run()
+18 SYSTEMPATH/Filters/DebugToolbar.php(44): CodeIgniter\Debug\Toolbar->prepare()
+19 SYSTEMPATH/Filters/Filters.php(278): CodeIgniter\Filters\DebugToolbar->after()
+20 SYSTEMPATH/Filters/Filters.php(364): CodeIgniter\Filters\Filters->runAfter()
+21 SYSTEMPATH/CodeIgniter.php(407): CodeIgniter\Filters\Filters->runRequired()
+22 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->runRequiredAfterFilters()
+23 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+24 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+25 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+DEBUG - 2026-04-17 06:48:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 06:50:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 06:50:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 06:50:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 06:59:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-04-17 06:59:55 --> CSRF token verified.
+DEBUG - 2026-04-17 07:00:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:00:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:00:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:00:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:00:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:07:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:07:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:07:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:07:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:07:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:07:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:07:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:07:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:08:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:08:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:08:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:08:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:08:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:08:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:08:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:08:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:08:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:08:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:08:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:08:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:08:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:08:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:08:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:08:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:08:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:08:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:08:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:08:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:08:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:08:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:08:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:08:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:08:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:08:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:08:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:08:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:09:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:09:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:09:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:09:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:09:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:09:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:09:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:09:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:09:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:09:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:09:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:09:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:09:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:09:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:09:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:09:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:09:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:09:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:09:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:09:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:09:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:09:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:09:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:09:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:09:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:09:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:10:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:10:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:10:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:10:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:10:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:10:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:10:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:10:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:10:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:10:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:10:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:10:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:10:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:10:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:10:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:10:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:10:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:10:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:10:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:10:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:10:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:10:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:10:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:10:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:10:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:10:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:10:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:10:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:10:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:10:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:10:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:10:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:10:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:10:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:10:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:10:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:10:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:10:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:10:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:10:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:10:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:10:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:10:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:10:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:10:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:10:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:10:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:10:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:10:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:11:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:11:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:11:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:11:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:11:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:11:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:11:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:11:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:11:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:12:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:12:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:20:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:20:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:20:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:26:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:27:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:27:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:27:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:27:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:27:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-04-17 07:27:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
